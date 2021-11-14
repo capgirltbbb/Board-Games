@@ -4,8 +4,8 @@ const Game = require("../models/games.model");
 const isLoggedIn = require("../middleware/isLoggedIn");
 
 //Create Comment
-router.post("/", (req, res) => {
-    Ratings.create()
+router.post("/", isLoggedIn, (req, res) => {
+    Ratings.create(req.body)
     .then((newComment)=>{
         return res.json({comments: newComment});
     }).catch((err) => res.json({ errorMessage: err }))
