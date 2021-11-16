@@ -4,7 +4,7 @@ const gameSchema = new Schema({
     name: String,
     //images.small: String,
     primary_publisher: [String],
-    msrp: Number,
+    msrp_text: String,
     min_players: Number,
     max_players: Number,
     min_playtime: Number,

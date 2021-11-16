@@ -28,7 +28,7 @@ router.post("/signup", isLoggedOut, (req, res) => {
   }
 
   if (password.length < 8) {
-    return res.status(400).render("auth/signup", {
+    return res.status(400).json("auth/signup", {
       errorMessage: "Your password needs to be at least 8 characters long.",
     });
   }
@@ -75,7 +75,7 @@ router.post("/signup", isLoggedOut, (req, res) => {
             .json("auth/signup", { errorMessage: error.message });
         }
         if (error.code === 11000) {
-          return res.status(400).render("auth/signup", {
+          return res.status(400).json("auth/signup", {
             errorMessage:
               "Username need to be unique. The username you chose is already in use.",
           });
