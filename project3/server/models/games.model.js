@@ -2,7 +2,7 @@ const { Schema, model } = require("mongoose");
 
 const gameSchema = new Schema({
     name: String,
-    primary_publisher: [String],
+    primary_publisher: String,
     msrp_text: String,
     min_players: Number,
     max_players: Number,
@@ -10,6 +10,7 @@ const gameSchema = new Schema({
     max_playtime: Number,
     min_age: Number,
     description: String, 
+    id: String,
 });
 
 const Game = model ("Game", gameSchema);

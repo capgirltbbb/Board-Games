@@ -19,6 +19,10 @@ require("./config")(app);
 const allRoutes = require("./routes");
 app.use("/api", allRoutes);
 
+// app.use("/wishlist", require("./routes/wishlist.route"));
+app.use("/games", require("./routes/games.route"));
+app.use("/ratings", require("./routes/ratings.route"));
+
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);
 
